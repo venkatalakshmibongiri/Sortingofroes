@@ -1,0 +1,52 @@
+import java.util.*;
+class Sortingofrows
+{
+public static void main(String args[]);
+{
+Scanner sc=new Scanner(System.in);
+System.out.println("Enter the Rows and Columns  ");
+int r=sc.nextInt();
+int c=sc.nextInt();
+int a[][]=new int[r][c];
+System.out.println("Enter the Elements in the ");
+for(int i=0;i<r;i++)
+ {
+ for(int j=0;j<c;j++)
+  {
+  a[i][j]=sc.nextInt( );
+  }
+ }
+int t;
+for(int i=0;i<r;i++)
+ for(int j=0;j<c;j++)
+   for(int k=(j+1);k<c;k++)
+     if(a[i][j]>a[i][k])
+     {
+     t=a[i][j];
+     a[i][j]=a[i][k];
+     a[i][k]=t;
+     }
+  System.out.println("After Sorting of rows of matrix is  ");
+  for(int i=0;i<r;i++)
+  {
+    for(int j=0;j<c;j++)
+    {
+     System.out.print(a[i][j]+" ");
+    }
+  System.out.println(); 
+  }
+}
+}
+
+Output_________________________________________________________________________---
+Enter the Rows and Columns 3
+3
+Enter the Elements in the
+4 3 5
+9 10 2
+8 14 11
+After Sorting of rows of matrix is  
+5 4 3
+2 9 10
+8 11 14
+
